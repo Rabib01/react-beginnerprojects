@@ -1,6 +1,17 @@
 {
   /*
-  Use state when the value affects what you see on the screen. Use a ref when you need to remember something without causing a re-render.
+Use state when the value affects what you see on the screen. Use a ref when you need to remember something without causing a re-render.
+Other differences include :
+
+|                                 | `useState` | `useRef`  |
+| ------------------------------- | ---------- | --------- |
+| Stores a value                  | ✅          | ✅         |
+| Value survives re-renders       | ✅          | ✅         |
+| Changing it causes re-render    | ✅          | ❌         |
+| Can reference DOM elements      | ❌          | ✅         |
+| Good for values displayed in UI | ✅          | Usually ❌ |
+| Good for DOM manipulation       | ❌          | ✅         |
+
   */
 }
 
