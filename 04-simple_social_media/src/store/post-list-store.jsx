@@ -6,7 +6,9 @@ export const PostList = createContext({
   deletePost: () => {},
 });
 
+// Action Primarily remains empty, there is noting fixed, we decide what goes inside action object when we call dispatch 
 const postListreducer = (postList, action) => {
+  // this was an unnecessary way of doing things
   let newPostList = postList;
   switch (action.type) {
     case "delete":
