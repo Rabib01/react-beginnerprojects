@@ -1,5 +1,7 @@
 import { createContext, useReducer } from "react";
 
+// context Objects are created with the convention of PascalCases instead of camelCases
+
 export const PostList = createContext({                // Default values/ fallbacks for the context 
   postList: [],                                        // If a component tries to consume this context but there isn't a Provider supplying the real values, use these values instead
   addPost: () => {},                                   // Safe default for the data, safe placeholder functions for all cases
