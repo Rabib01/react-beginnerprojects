@@ -26,6 +26,8 @@ const postListreducer = (postList, action) => {
 
 const PostListProvider = ({ children }) => {
   //  dispatch is the function that you call when you want to update the state managed by useReducer
+  //  useReducer manages the state
+  //  reducer is the function that decides how that state should be changed
   const [postList, dispatchPostlist] = useReducer(
     postListreducer,
     DEFAULT_POST_LIST,
