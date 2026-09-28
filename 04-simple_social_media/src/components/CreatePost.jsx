@@ -1,3 +1,10 @@
+{
+  /*
+  Use state when the value affects what you see on the screen. Use a ref when you need to remember something without causing a re-render.
+  */
+}
+
+
 import { useContext, useRef } from "react";
 import { PostList } from "../store/post-list-store";
 
