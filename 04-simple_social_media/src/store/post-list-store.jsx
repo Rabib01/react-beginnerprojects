@@ -1,6 +1,7 @@
 import { createContext, useReducer } from "react";
 
 // context Objects are created with the convention of PascalCases instead of camelCases
+// order of execution -> contextObjects creates the context, context objects needs to have access to a provider, children components reads the context by destructing, then children components update the UI -> it is all about the UI.
 
 export const PostList = createContext({                // Default values/ fallbacks for the context 
   postList: [],                                        // If a component tries to consume this context but there isn't a Provider supplying the real values, use these values instead
