@@ -1,9 +1,9 @@
 import { createContext, useReducer } from "react";
 
-export const PostList = createContext({
-  postList: [],
-  addPost: () => {},
-  deletePost: () => {},
+export const PostList = createContext({                // Default values/ fallbacks for the context 
+  postList: [],                                        // If a component tries to consume this context but there isn't a Provider supplying the real values, use these values instead
+  addPost: () => {},                                   // Safe default for the data, safe placeholder functions for all cases
+  deletePost: () => {},                                // Also remember : context does not hold the actual data -> they are just a reference to the actual states, or the reducers in this instance, that is where the values are stored
 });
 
 // Action Primarily remains empty, there is noting fixed, we decide what goes inside action object when we call dispatch 
