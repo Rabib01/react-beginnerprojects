@@ -8,7 +8,7 @@ export const PostList = createContext({
 
 // Action Primarily remains empty, there is noting fixed, we decide what goes inside action object when we call dispatch 
 const postListreducer = (postList, action) => {
-  // this was an unnecessary way of doing things
+  // this was an unnecessary way of doing things, two variables pointing to the same stupid array
   let newPostList = postList;
   switch (action.type) {
     case "delete":
@@ -16,7 +16,7 @@ const postListreducer = (postList, action) => {
         return post.id != action.payload.id;
       });
     case "add":
-      return [action.payload.currentPostList,...newPostList]
+      return [...newPostList, action.payload.currentPostList]
     default:
       return postList;
   }
