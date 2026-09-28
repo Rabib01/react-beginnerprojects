@@ -34,6 +34,8 @@ const PostListProvider = ({ children }) => {
   };
 
 // payload is the data that we are sending to the reducer along with the instruction
+// entire object here is the action, would have been cool if this was called payload instead 
+// payload for deletePost is just the payload: { id } 
   const deletePost = (id) => {
     dispatchPostlist({ type: "delete", payload: { id } });
   };
