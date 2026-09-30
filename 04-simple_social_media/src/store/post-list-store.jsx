@@ -21,6 +21,10 @@ const postListreducer = (postList, action) => {
     case "add":
       return [...newPostList, action.payload.currentPostList]
     default:
+    case "edit";
+      console.log("hello world")
+      // reducers must always return the next State, without return nextState, the current state mutates to noting -> this thing crashes the app
+      //  if it does not, then postList would crash - > the above line cl -> would crash app if ever action.type is edit 
       return postList;
   }
 };
