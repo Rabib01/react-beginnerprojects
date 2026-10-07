@@ -48,6 +48,40 @@ const WeatherCard = ({ weather,city }) => {
       </div>
     </div>
   );
+
+  
 };
 
 export default WeatherCard;
+
+  // less dumg version 
+const weatherConditions = {
+  clear: condition === 0 && "Clear",
+  partlyCloudy:
+    (condition === 1 || condition === 2 || condition === 3) &&
+    "Partly cloudy",
+  fog: condition >= 45 && condition <= 48 && "Fog",
+  rain: condition >= 51 && condition <= 67 && "Rain",
+  snow: condition >= 71 && condition <= 77 && "Snow",
+};
+
+const weatherText =
+  weatherConditions.clear ||
+  weatherConditions.partlyCloudy ||
+  weatherConditions.fog ||
+  weatherConditions.rain ||
+  weatherConditions.snow ||
+  "Cloudy";
+
+// prduction worthy 
+function getWeatherText(condition) {
+  if (condition === 0) return "Clear";
+  if (condition >= 1 && condition <= 3) return "Partly cloudy";
+  if (condition >= 45 && condition <= 48) return "Fog";
+  if (condition >= 51 && condition <= 67) return "Rain";
+  if (condition >= 71 && condition <= 77) return "Snow";
+
+  return "Cloudy";
+}
+
+const weatherText = getWeatherText(condition);
