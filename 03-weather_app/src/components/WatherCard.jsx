@@ -13,18 +13,31 @@ const WeatherCard = ({ weather,city }) => {
   const wind = current.windspeed ?? "--";
   const feelsLike = current.apparent_temperature ?? temperature;
 
-  const weatherText =
-    condition === 0
-      ? "Clear"
-      : condition === 1 || condition === 2 || condition === 3
-        ? "Partly cloudy"
-        : condition >= 45 && condition <= 48
-          ? "Fog"
-          : condition >= 51 && condition <= 67
-            ? "Rain"
-            : condition >= 71 && condition <= 77
-              ? "Snow"
-              : "Cloudy";
+  // const weatherText =
+  //   condition === 0
+  //     ? "Clear"
+  //     : condition === 1 || condition === 2 || condition === 3
+  //       ? "Partly cloudy"
+  //       : condition >= 45 && condition <= 48
+  //         ? "Fog"
+  //         : condition >= 51 && condition <= 67
+  //           ? "Rain"
+  //           : condition >= 71 && condition <= 77
+  //             ? "Snow"
+  //             : "Cloudy";
+  
+  function getWeatherText(condition) {
+  if (condition === 0) return "Clear";
+  if (condition >= 1 && condition <= 3) return "Partly cloudy";
+  if (condition >= 45 && condition <= 48) return "Fog";
+  if (condition >= 51 && condition <= 67) return "Rain";
+  if (condition >= 71 && condition <= 77) return "Snow";
+
+  return "Cloudy";
+}
+
+const weatherText = getWeatherText(condition);
+
 
   return (
     <div className={styles.weatherdiv}>
